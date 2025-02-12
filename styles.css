@@ -1,0 +1,243 @@
+body{
+    text-align: center;
+}
+.container {
+    width: 1800px;
+    min-height: 100%vh;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(212, 212, 212, 0.066);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 20px 2px #1c1c1c;
+    display:block;
+    position: relative;
+    z-index: 3;
+}
+.container1 {
+    width: 1000px;
+    height: 600px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(212, 212, 212, 0.066);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 20px 2px #1c1c1c;
+    display:flex;
+    position: relative;
+    z-index: 3;
+    justify-content: center;
+}
+
+form{
+    align-items: center;
+}
+
+.form-label{
+    margin-left: 10px;
+    text-align: left;
+    width: 500px;
+    color: #ffffffc6;
+}
+
+.text-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+/* Full-width text area */
+
+/* Inputs */
+.text-container input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff29;
+}
+
+.full-width {
+    width: 810px;
+}
+.li{
+    text-align: center;
+    width: 400px;
+}
+.photo-container {
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Adds spacing between selectors */
+    margin-top: 20px;
+}
+
+.photo-selector {
+    width: 150px;
+    height: 150px;
+}
+
+.upload-box {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-box .plus {
+    font-size: 40px;
+    color: #ccc;
+    position: absolute;
+}
+
+.upload-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+
+.top-left-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+
+/* Item Box */
+.item-box {
+    background-color: #00000079;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    padding-bottom: 15px;
+    width: 250px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px; 
+}
+.item-box:hover {
+    transform: scale(1.05);
+}
+
+/* Category Tag */
+.category-tag {
+    position: absolute;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+}
+
+/* Grid Layout */
+.items-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    grid-template-columns: repeat(3,1fr); /* Responsive grid */
+    gap: 40px; /* Space between items */
+    width: 80%;
+    max-width: 80vw;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Image */
+.item-box img {
+    margin-top: 20px;
+    width: 90%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-color: #000;
+}
+
+/* Item Info */
+.item-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.item-info h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+/* Button */
+.more-info {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.more-info:hover {
+    background-color: black;
+    color: white;
+}
+
+.stars, .twinkling, .clouds {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(twinkling.png) repeat top center;
+  z-index:1;
+  animation:move-twink-back 200s linear infinite;
+}

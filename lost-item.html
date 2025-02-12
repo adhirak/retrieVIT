@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>retrieVIT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div> 
+    <div class="clouds"></div>
+    <br><br>
+    <div class="container1">
+        <a href="index.html">
+            <button type="submit" class="btn btn-dark top-left-btn" style="width: 100px;"> Go Back </button>
+        </a>
+        <form>
+            <div class="photo-container">
+                <div class="photo-selector">
+                    <input type="file" id="fileInput1" accept="image/*" hidden required>
+                    <label for="fileInput1" class="upload-box">
+                        <span class="plus">+</span>
+                        <img id="previewImage1" src="" alt="" hidden>
+                    </label>
+                </div>
+            
+                <div class="photo-selector">
+                    <input type="file" id="fileInput2" accept="image/*" hidden>
+                    <label for="fileInput2" class="upload-box">
+                        <span class="plus">+</span>
+                        <img id="previewImage2" src="" alt="" hidden>
+                    </label>
+                </div>
+            
+                <div class="photo-selector">
+                    <input type="file" id="fileInput3" accept="image/*" hidden>
+                    <label for="fileInput3" class="upload-box">
+                        <span class="plus">+</span>
+                        <img id="previewImage3" src="" alt="" hidden>
+                    </label>
+                </div>
+            </div>
+            
+            <br>
+                <div class="li">
+                    <label for="itemDescription" class="form-label">Item Description</label>
+                    <textarea class="full-width" id="itemDescription" rows="3" placeholder="Describe the item" required></textarea>
+                </div>
+                <div class="text-container">
+                <div class="li">
+                    <label for="itemLocation" class="form-label">Location Lost</label>
+                    <input type="text" id="itemLocation" placeholder="Where did you lose it?" required>
+                </div>
+                <div class="li">
+                    <label for="itemAdditionalDetails" class="form-label">Additional Details</label>
+                    <input type="text" id="itemLocation" placeholder="Any marks on it">
+                </div>
+                <div class="li">
+                    <label for="itemAdditionalDetails" class="form-label">Contact Details</label>
+                    <input type="text" id="itemLocation" placeholder="Enter your Details">
+                </div>
+                <div class="li">
+                    <label for="itemAdditionalDetails" class="form-label">Date/Time Lost</label>
+                    <input type="datetime-local" id="itemLocation" placeholder="Enter your Details">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="more-info" style="width: 250px;">Add Item to the List</button>
+        </form>
+    </div>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+       function handleFileInput(inputId, previewId, plusClass) {
+    document.getElementById(inputId).addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const preview = document.getElementById(previewId);
+                preview.src = e.target.result;
+                preview.hidden = false;
+                document.querySelector(plusClass).hidden = true; // Hide plus sign
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+// Apply to each file input
+handleFileInput("fileInput1", "previewImage1", "#fileInput1 + label .plus");
+handleFileInput("fileInput2", "previewImage2", "#fileInput2 + label .plus");
+handleFileInput("fileInput3", "previewImage3", "#fileInput3 + label .plus");
+
+
+    </script>
+</body>
+</html>
