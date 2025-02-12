@@ -26,7 +26,11 @@
                     <h3> Headphones </h3>
                     <p><strong>Lost on:</strong> Monday, January 20, 2025</p>
                     <p><strong>Place:</strong> AB-3 303 </p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info</button>
+                    <div class="item-details">
+                    <p><strong>Description:</strong> Brand new headphones, lost during the class break.</p>
+                    <p><strong>Contact:</strong> User's contact information or email.</p>
+                    </div>
                 </div>
             </div>
 
@@ -38,7 +42,11 @@
                     <h3> Notebook </h3>
                     <p><strong>Lost on:</strong> Tuesday, January 7, 2025</p>
                     <p><strong>Place:</strong> AB-2 203 </p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info </button>
+                    <div class="item-details">
+                        <p><strong>Description:</strong> Brand new headphones, lost during the class break.</p>
+                        <p><strong>Contact:</strong> User's contact information or email.</p>
+                        </div>
                 </div>
             </div>
 
@@ -50,7 +58,11 @@
                     <h3>Watch</h3>
                     <p><strong>Lost on:</strong> Tuesday, December 17, 2024</p>
                     <p><strong>Place:</strong> AB-1 </p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info </button>
+                    <div class="item-details">
+                        <p><strong>Description:</strong> Brand new headphones, lost during the class break.</p>
+                        <p><strong>Contact:</strong> User's contact information or email.</p>
+                        </div>
                 </div>
             </div>
 
@@ -61,7 +73,11 @@
                     <h3>Earring</h3>
                     <p><strong>Lost on:</strong> Monday, January 20, 2025</p>
                     <p><strong>Place:</strong> D2 block 16th floor </p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info </button>
+                    <div class="item-details">
+                        <p><strong>Description:</strong> Brand new headphones, lost during the class break.</p>
+                        <p><strong>Contact:</strong> User's contact information or email.</p>
+                        </div>
                 </div>
             </div>
 
@@ -73,7 +89,11 @@
                     <h3>Guitar</h3>
                     <p><strong>Lost on:</strong> Tuesday, January 7, 2025</p>
                     <p><strong>Place:</strong> B-Block 7th Floor </p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info </button>
+                    <div class="item-details">
+                        <p><strong>Description:</strong> Brand new headphones, lost during the class break.</p>
+                        <p><strong>Contact:</strong> User's contact information or email.</p>
+                        </div>
                 </div>
             </div>
 
@@ -85,7 +105,11 @@
                     <h3>Watch</h3>
                     <p><strong>Lost on:</strong> Tuesday, December 17, 2024</p>
                     <p><strong>Place:</strong> Near Handball Court</p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info </button>
+                    <div class="item-details">
+                        <p><strong>Description:</strong> Brand new headphones, lost during the class break.</p>
+                        <p><strong>Contact:</strong> User's contact information or email.</p>
+                        </div>
                 </div>
             </div>
             <div class="item-box">
@@ -95,7 +119,11 @@
                     <h3>Ear pin</h3>
                     <p><strong>Lost on:</strong> Monday, January 20, 2025</p>
                     <p><strong>Place:</strong> D2 block 16th floor</p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info </button>
+                    <div class="item-details">
+                        <p><strong>Description:</strong> Brand new headphones, lost during the class break.</p>
+                        <p><strong>Contact:</strong> User's contact information or email.</p>
+                        </div>
                 </div>
             </div>
 
@@ -107,7 +135,7 @@
                     <h3>Earring</h3>
                     <p><strong>Lost on:</strong> Tuesday, January 7, 2025</p>
                     <p><strong>Place:</strong> North Square</p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info</button>
                 </div>
             </div>
 
@@ -119,12 +147,29 @@
                     <h3>Watch</h3>
                     <p><strong>Lost on:</strong> Tuesday, December 17, 2024</p>
                     <p><strong>Place:</strong> Near Handball Court</p>
-                    <button class="more-info">More info →</button>
+                    <button class="more-info">More info</button>
                 </div>
             </div>
         </div> 
         <br><br> 
     </div>
-    <br><br> 
+    <br><br>
+    <script>
+        document.querySelectorAll('.more-info').forEach(button => {
+    button.addEventListener('click', function() {
+        // Get the closest item-box and toggle the expanded class
+        const itemBox = this.closest('.item-box');
+        itemBox.classList.toggle('expanded');
+        
+        // Change button text to toggle between 'More info' and 'Less info'
+        if (itemBox.classList.contains('expanded')) {
+            this.textContent = 'Less info';
+        } else {
+            this.textContent = 'More info';
+        }
+    });
+});
+
+    </script> 
 </body>
 </html>
