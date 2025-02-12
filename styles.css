@@ -62,6 +62,7 @@ form{
     border: 1px solid #000000;
     border-radius: 5px;
     background-color: #ffffff29;
+    color: #fff;
 }
 
 .full-width {
@@ -185,8 +186,6 @@ form{
     width: 90%;
     height: 150px;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     border-color: #000;
 }
 
@@ -201,6 +200,76 @@ form{
     font-size: 18px;
 }
 
+.item-box.expanded .item-details {
+    display: block;            /* Show details */
+    opacity: 1;                /* Fade in */
+    max-height: 1000px;        /* Allow full height expansion */
+    padding: 20px;
+    margin-top: 10px;
+    overflow-y: auto;          /* Make content scrollable */
+}
+/* Initially hide the details */
+.item-details {
+    display: none;
+    margin-top: 10px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Initial state of the item-box (before expansion) */
+.item-box {
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.3s ease;
+}
+
+/* Expanded state (when user clicks the "More info" button) */
+.item-box.expanded {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    height: 80vh;  /* Takes up 80% of the screen height */
+    width: 80vw;   /* Takes up 80% of the screen width */
+    z-index: 9999;
+    transform: scale(1);  /* Start from original size */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);  /* Optional shadow */
+    border-radius: 15px;
+}
+
+/* Animate the "pop-up" effect */
+.item-box.expanded {
+    transform: scale(1.1);  /* Make the item box appear to grow */
+}
+
+/* Adjust item details for expansion */
+.item-box .item-details {
+    opacity: 1;
+    max-height: 100%; /* Ensure details take full space */
+    padding: 20px;
+    margin-top: 10px;
+    overflow-y: auto; /* Make content scrollable */
+}
+
+/* Overlay background */
+.item-box.expanded::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.781);  /* Darker background on expansion */
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+/* Ensure opacity increase for the background */
+.item-box.expanded::before {
+    opacity: 1;  /* Fade in the background */
+}
+
+
 /* Button */
 .more-info {
     display: block;
@@ -212,7 +281,7 @@ form{
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .more-info:hover {
